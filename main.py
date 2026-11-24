@@ -6,6 +6,9 @@ No network, no secrets, no reading anything outside the repo.
 
 import os
 
+OUTPUT_DIR = "/output"
+OUTPUT_PATH = os.path.join(OUTPUT_DIR, "entry.txt")
+
 ENTRY = (
     "The congressman who drafted a 40-page law to govern artificial "
     "intelligence has spent three days trying to turn his own press "
@@ -15,8 +18,8 @@ ENTRY = (
 
 
 def main() -> None:
-    os.makedirs("/output", exist_ok=True)
-    with open("/output/entry.txt", "w", encoding="utf-8") as f:
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         f.write(ENTRY + "\n")
 
 
